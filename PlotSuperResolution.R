@@ -124,7 +124,7 @@ height <- data.frame(height = nrow(images_cl[[1]]))
 height <- bind_rows(height)
 
 width <- list()
-width <- data.frame(width = nrow(images_cl[[1]]))
+width <- data.frame(width = ncol(images_cl[[1]]))
 width <- bind_rows(width)
 
 
