@@ -2,6 +2,9 @@
 
 The **Deep** learning model for **Spa**tial gene **C**lusters and **E**xpression (DeepSpaCE) is a method that predicts spatial gene-expression levels and transcriptomic cluster types from tissue section images using deep learning.
 
+# Note
+
+DeepSpaCE is now beta version. Please note that we shall not be responsible for any loss, damages and troubles.
 
 # Table of Contents
 - [Requirement](#requirement)
@@ -121,6 +124,13 @@ Build an image on your local environment since root privileges are required. The
             --sampleName Human_Breast_Cancer_Block_A_Section_1 \
             --geneSymbol ESR1 \
             --extraSize 150
+
+## Semi-supervised learning (under development)
+
+Prepare image_list.txt for semi-supervised learning.
+image_list.txt should contain "ImageSet", "sample_No, and "image_path".
+
+/home/$USER/DeepSpaCE/data/Visium/ImageSet/"+sampleName+"/ImageSet_0/image_list.txt
 
 
 # Citation
