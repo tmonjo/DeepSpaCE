@@ -134,9 +134,7 @@ image_list.txt should contain "ImageSet", "sample_No, and "image_path".
 
 
 # Citation
-The DeepSpaCE pre-print:  
-Taku Monjo, Masaru Koido, Satoi Nagasawa, Yutaka Suzuki, and Yoichiro Kamatani “Efficient prediction of a spatial transcriptomics profile better characterizes breast cancer tissue sections without costly experimentation” bioRxiv (2021)
-https://www.biorxiv.org/content/10.1101/2021.04.22.440763v1
+Monjo, T., Koido, M., Nagasawa, S. et al. Efficient prediction of a spatial transcriptomics profile better characterizes breast cancer tissue sections without costly experimentation. Sci Rep 12, 4133 (2022). https://doi.org/10.1038/s41598-022-07685-4
 
 
 # License
