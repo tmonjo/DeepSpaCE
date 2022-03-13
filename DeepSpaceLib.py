@@ -355,7 +355,7 @@ def make_model(use_pretrained, num_features, transfer, model):
         # load DenseNet121 model
         net = torchvision.models.densenet121(pretrained=use_pretrained)
 
-        # change the last unit of VGG16
+        # change the last unit of DenseNet121
         net.classifier = nn.Linear(in_features=1024, out_features=num_features)
 
 
@@ -826,7 +826,7 @@ def makeDataListSemi(rootDir, sampleNames, semiType, ImageSet, semiName):
     if semiType == "Visium":
         for sampleName in sampleNames:
             for i_imageSet in ImageSet:
-                image_l = pd.read_csv(rootDir+"/"+semiType+"/ImageSet/out/"+sampleName+"/ImageSet_"+str(i_imageSet)+"/image_list.txt", sep='\t')
+                image_l = pd.read_csv(rootDir+"/"+semiType+"/ImageSet/"+sampleName+"/ImageSet_"+str(i_imageSet)+"/image_list.txt", sep='\t')
                 image_list = image_list.append(image_l, ignore_index=True)
         
         idx_rnd = random.sample(image_list.index.tolist(), 2000*len(ImageSet))
@@ -834,7 +834,7 @@ def makeDataListSemi(rootDir, sampleNames, semiType, ImageSet, semiName):
 
     else:
         for i_imageSet in ImageSet:
-            image_l = pd.read_csv(rootDir+"/"+semiType+"/ImageSet/out/ImageSet_"+str(i_imageSet)+"/image_list.txt", sep='\t')
+            image_l = pd.read_csv(rootDir+"/"+semiType+"/ImageSet/ImageSet_"+str(i_imageSet)+"/image_list.txt", sep='\t')
             image_list = image_list.append(image_l, ignore_index=True)
 
 

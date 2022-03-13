@@ -368,8 +368,8 @@ run_train(outDir=outDir,
           num_epochs=num_epochs,
           device=device,
           early_stop_max=early_stop_max,
-          name='teacher',
-          ClusterPredictionMode=ClusterPredictionMode)
+          ClusterPredictionMode=ClusterPredictionMode,
+          name='teacher')
 
 
 
@@ -589,19 +589,20 @@ for i_semi in range(5):
               num_epochs=num_epochs,
               device=device,
               early_stop_max=early_stop_max,
-              name='student'+str(i_semi+1),
-              ClusterPredictionMode=ClusterPredictionMode)
+              ClusterPredictionMode=ClusterPredictionMode,
+              name='student'+str(i_semi+1))
 
     
     ### validation ###
     data_list_test_student, net_best = run_test(outDir=outDir,
                                                 data_list_df=data_list_test,
                                                 dataloaders_dict=dataloaders_dict_test,
-                                                geneSymbols=geneSymbols,
+                                                model=model,
                                                 device=device,
-                                                name="student"+str(i_semi+1),
+                                                geneSymbols=geneSymbols,
+                                                num_features=len(data_list_test['Cluster'].unique()),
                                                 ClusterPredictionMode=ClusterPredictionMode,
-                                                rm_cluster=rm_cluster)
+                                                name="student"+str(i_semi+1))
 
     data_list_test_student.to_csv("../out/data_list_test_student"+str(i_semi+1)+".txt", index=False, sep='\t', float_format='%.6f')
 
