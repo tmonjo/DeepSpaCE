@@ -101,7 +101,7 @@ Build an image on your local environment since root privileges are required. The
 
 ### Run super-resolution
 
-    singularity exec　DeepSpaCE.sif \
+    singularity exec DeepSpaCE.sif \
         python script/SuperResolution.py \
             --dataDir /home/$USER/DeepSpaCE/data \
             --outDir /home/$USER/DeepSpaCE/out \
