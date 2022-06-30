@@ -223,8 +223,8 @@ print("### make dictionary###")
 dataloaders_dict = {"valid": valid_dataloader}
 
 print("### save dataloader ###")
-with open("../out/DataLoader.pickle", mode='wb') as f:
-    pickle.dump(dataloaders_dict, f)
+#with open("../out/DataLoader.pickle", mode='wb') as f:
+#    pickle.dump(dataloaders_dict, f)
 
 
 print("### check ###")
