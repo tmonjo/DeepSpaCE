@@ -130,7 +130,7 @@ parser.add_argument('--augmentation', type=str, default='flip,crop,color,random'
 parser.add_argument('--early_stop_max', type=int, default=5,
                     help='How many epochs to wait for loss improvement (default: 5)')
 
-parser.add_argument('--rm_cluster', type=str, default='8',
+parser.add_argument('--rm_cluster', type=str, default='-1',
                     help='Remove cluster name (default: None)')
 
 parser.add_argument('--ClusterPredictionMode', action='store_true',
