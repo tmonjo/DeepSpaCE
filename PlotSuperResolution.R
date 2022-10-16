@@ -68,17 +68,17 @@ geom_spatial <-  function(mapping = NULL,
 parser <- ArgumentParser()
 
 parser$add_argument("--dataDir", default=paste0("/home/",Sys.getenv("USER"),"/DeepSpaCE/data"),
-                    help="TODO [default %(default)s]")
+                    help="data directory [default %(default)s]")
 parser$add_argument("--sampleName", default="Human_Breast_Cancer_Block_A_Section_1",
-                    help="TODO [default %(default)s]")
+                    help="sample name [default %(default)s]")
 parser$add_argument("--outDir", default=paste0("/home/",Sys.getenv("USER"),"/DeepSpaCE/out"),
-                    help="TODO [default %(default)s]")
+                    help="out directory [default %(default)s]")
 parser$add_argument("--geneSymbol", default="SPARC",
-                    help="TODO [default %(default)s]")
+                    help="gene symbol [default %(default)s]")
 parser$add_argument("--extraSize", type="integer", default=150,
-                    help="TODO [default %(default)s]")
+                    help="additional image size [%] [default %(default)s]")
 parser$add_argument("--resolution", choices=c("low", "high"), default='low',
-                    help="TODO [default %(default)s]")
+                    help="resolution (low or high) [default %(default)s]")
 
 args <- parser$parse_args()
 

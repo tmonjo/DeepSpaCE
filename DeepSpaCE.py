@@ -67,31 +67,31 @@ argrequired = False
 
 parser = argparse.ArgumentParser(description='DeepSpaCE')
 
-parser.add_argument('--dataDir', type=str, default='/home/'+os.environ['USER']+'/DeepSpaCE/data', required=argrequired,
+parser.add_argument('--dataDir', type=str, nargs=1, default='/home/'+os.environ['USER']+'/DeepSpaCE/data', required=argrequired,
                     help='Data directory (default: '+'/home/'+os.environ['USER']+'/DeepSpaCE/data'+')')
 
-parser.add_argument('--outDir', type=str, default='/home/'+os.environ['USER']+'/DeepSpaCE/',
+parser.add_argument('--outDir', type=str, nargs=1, default='/home/'+os.environ['USER']+'/DeepSpaCE/',
                     help='Root directory (default: '+'/home/'+os.environ['USER']+'/DeepSpaCE/'+')')
 
-parser.add_argument('--sampleNames_train', type=str, default='Human_Breast_Cancer_Block_A_Section_1',
+parser.add_argument('--sampleNames_train', type=str, nargs=1, default='Human_Breast_Cancer_Block_A_Section_1',
                     help='Sample names to train (default: Human_Breast_Cancer_Block_A_Section_1)')
 
-parser.add_argument('--sampleNames_test', type=str, default='Human_Breast_Cancer_Block_A_Section_1',
+parser.add_argument('--sampleNames_test', type=str, nargs=1, default='Human_Breast_Cancer_Block_A_Section_1',
                     help='Sample names to test (default: Human_Breast_Cancer_Block_A_Section_1)')
 
-parser.add_argument('--sampleNames_semi', type=str, default='None',
+parser.add_argument('--sampleNames_semi', type=str, nargs=1, default='None',
                     help='Sample names to semi-supervised learning (default: None)')
 
-parser.add_argument('--semi_option', type=str, choices=['normal', 'random', 'permutation'], default='normal',
+parser.add_argument('--semi_option', type=str, nargs=1, choices=['normal', 'random', 'permutation'], default='normal',
                     help='Option of semi-supervised learning (default: normal)')
 
-parser.add_argument('--seed', type=int, default=0,
+parser.add_argument('--seed', type=int, nargs=1, default=0,
                     help='Random seed (default: 0)')
 
-parser.add_argument('--threads', type=int, default=8,
+parser.add_argument('--threads', type=int, nargs=1, default=8,
                     help='Number of CPU threads (default: 8)')
 
-parser.add_argument('--GPUs', type=int, default=1,
+parser.add_argument('--GPUs', type=int, nargs=1, default=1,
                     help='Number of GPUs (default: 1)')
 
 parser.add_argument('--cuda', action='store_true',
@@ -100,46 +100,46 @@ parser.add_argument('--cuda', action='store_true',
 parser.add_argument('--transfer', action='store_true',
                     help='Enables transfer training')
 
-parser.add_argument('--model', type=str, choices=['VGG16','DenseNet121'], default='DenseNet121',
+parser.add_argument('--model', type=str, nargs=1, choices=['VGG16','DenseNet121'], default='DenseNet121',
                     help='Deep learning model')
 
-parser.add_argument('--batch_size', type=int, default=128,
+parser.add_argument('--batch_size', type=int, nargs=1, default=128,
                     help='Input batch size for training (default: 128)')
 
-parser.add_argument('--num_epochs', type=int, default=10,
+parser.add_argument('--num_epochs', type=int, nargs=1, default=10,
                     help='Number of epochs to train (default: 100)')
 
-parser.add_argument('--lr', type=float, default=1e-4,
+parser.add_argument('--lr', type=float, nargs=1, default=1e-4,
                     help='Learning rate (default: 1e-4)')
 
-parser.add_argument('--weight_decay', type=float, default=1e-4,
+parser.add_argument('--weight_decay', type=float, nargs=1, default=1e-4,
                     help='Weight decay (default: 1e-4)')
 
-parser.add_argument('--clusteringMethod', type=str, choices=['graphclust', 'kmeans_2_clusters', 'kmeans_3_clusters', 'kmeans_4_clusters', 'kmeans_5_clusters', 'kmeans_6_clusters', 'kmeans_7_clusters','kmeans_8_clusters', 'kmeans_9_clusters', 'kmeans_10_clusters'], default='graphclust',
+parser.add_argument('--clusteringMethod', type=str, nargs=1, choices=['graphclust', 'kmeans_2_clusters', 'kmeans_3_clusters', 'kmeans_4_clusters', 'kmeans_5_clusters', 'kmeans_6_clusters', 'kmeans_7_clusters','kmeans_8_clusters', 'kmeans_9_clusters', 'kmeans_10_clusters'], default='graphclust',
                     help='Clustering method (default: graphclust)')
 
-parser.add_argument('--extraSize', type=int, default=150,
+parser.add_argument('--extraSize', type=int, nargs=1, default=150,
                     help='Extra image size (default: 150)')
 
-parser.add_argument('--quantileRGB', type=int, default=80,
+parser.add_argument('--quantileRGB', type=int, nargs=1, default=80,
                     help='Threshold of quantile RGB (default: 80)')
 
-parser.add_argument('--augmentation', type=str, default='flip,crop,color,random',
+parser.add_argument('--augmentation', type=str, nargs=1, default='flip,crop,color,random',
                     help='Image augmentation methods (default: flip,crop,color,random)')
 
-parser.add_argument('--early_stop_max', type=int, default=5,
+parser.add_argument('--early_stop_max', type=int, nargs=1, default=5,
                     help='How many epochs to wait for loss improvement (default: 5)')
 
-parser.add_argument('--rm_cluster', type=str, default='-1',
+parser.add_argument('--rm_cluster', type=str, nargs=1, default='-1',
                     help='Remove cluster name (default: None)')
 
 parser.add_argument('--ClusterPredictionMode', action='store_true',
                     help='Enables ClusterPredictionMode')
 
-parser.add_argument('--cross_index', type=int, default=0,
+parser.add_argument('--cross_index', type=int, nargs=1, default=0,
                     help='Index of 5-fold cross-validation (default: 0)')
 
-parser.add_argument('--geneSymbols', type=str, default='ESR1,ERBB2,MKI67',
+parser.add_argument('--geneSymbols', type=str, nargs=1, default='ESR1,ERBB2,MKI67',
                     help='Gene symbols (default: ESR1,ERBB2,MKI67)')
 
 args = parser.parse_args()

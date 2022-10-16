@@ -222,11 +222,6 @@ valid_dataloader = torch.utils.data.DataLoader(valid_dataset, batch_size=batch_s
 print("### make dictionary###")
 dataloaders_dict = {"valid": valid_dataloader}
 
-print("### save dataloader ###")
-#with open("../out/DataLoader.pickle", mode='wb') as f:
-#    pickle.dump(dataloaders_dict, f)
-
-
 print("### check ###")
 batch_iterator = iter(dataloaders_dict["valid"])
 inputs, labels = next(batch_iterator)

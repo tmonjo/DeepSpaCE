@@ -27,9 +27,9 @@ parser$add_argument("--dataDir", default=paste0("/home/",Sys.getenv("USER"),"/De
 parser$add_argument("--sampleName", default="Breast_Cancer_Block_A_Section_1",
                     help="Sample name [default %(default)s]")
 parser$add_argument("--threshold_count", type="integer", default=1000,
-                    help="TODO [default %(default)s]")
+                    help="threshold: number of counts [default %(default)s]")
 parser$add_argument("--threshold_gene", type="integer", default=1000,
-                    help="TODO [default %(default)s]")
+                    help="threshold: number of genes [default %(default)s]")
 
 args <- parser$parse_args()
 

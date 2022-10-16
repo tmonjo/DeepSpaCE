@@ -11,9 +11,9 @@ library(argparse)
 parser <- ArgumentParser()
 
 parser$add_argument("--dataDir", default=paste0("/home/",Sys.getenv("USER"),"/DeepSpaCE/data"),
-                    help="TODO [default %(default)s]")
+                    help="data directory [default %(default)s]")
 parser$add_argument("--sampleName", default="Human_Breast_Cancer_Block_A_Section_1",
-                    help="TODO [default %(default)s]")
+                    help="sample name [default %(default)s]")
 
 args <- parser$parse_args()
 
