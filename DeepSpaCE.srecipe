@@ -60,6 +60,17 @@ From: ubuntu:18.04
 
 
 	### install R package dependencies ###
+	# devtool dependencies from https://www.digitalocean.com/community/tutorials/how-to-install-r-packages-using-devtools-on-ubuntu-18-04
+	# and from https://stackoverflow.com/questions/20923209/problems-installing-the-devtools-package
+	apt install -y libfontconfig1-dev 
+	apt install -y libharfbuzz-dev 
+	apt install -y libfribidi-dev 
+	apt install -y libfreetype6-dev 
+	apt install -y libpng-dev 
+	apt install -y libtiff5-dev 
+	apt install -y libjpeg-dev
+	apt install -y build-essential 
+	apt install -y libcurl4-gnutls-dev
 	apt install -y libxml2-dev
 	apt install -y libssl-dev
 	apt install -y libcurl4-openssl-dev
