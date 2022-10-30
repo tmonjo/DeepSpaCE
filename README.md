@@ -24,8 +24,12 @@ DeepSpaCE is now beta version. Please note that we shall not be responsible for 
 
     git clone https://github.com/tmonjo/DeepSpaCE
 
-## Build a Singularity image
+## Build a Singularity image (option 1)
+Pull an image from Dokcer Hub.
 
+    singularity pull docker://tmonjo/deepspace:"v1.0"
+
+## Build a Singularity image (option 2)
 Build an image on your local environment since root privileges are required. Then, you can run DeepSpaCE with "DeepSpaCE.sif" on any servers.
 
     sudo singularity build DeepSpaCE.sif DeepSpaCE.srecipe
